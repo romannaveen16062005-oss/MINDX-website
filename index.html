@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINDX — AI Workspace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="workspace">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="logo">M</div>
+
+            <div>
+                <h1>MINDX</h1>
+                <p>PERSONAL AI WORKSPACE</p>
+            </div>
+        </div>
+
+        <button class="new-chat" type="button"
+            onclick="showSection('dashboard')">
+            <span>＋</span> New conversation
+        </button>
+
+        <p class="side-label">WORKSPACE</p>
+
+        <nav class="side-nav">
+
+            <button
+                class="nav-item selected"
+                type="button"
+                onclick="showSection('dashboard', this)">
+                <span>◈</span>
+                Dashboard
+            </button>
+
+            <button
+                class="nav-item"
+                type="button"
+                onclick="showSection('commands', this)">
+                <span>⚡</span>
+                Commands
+            </button>
+
+            <button
+                class="nav-item"
+                type="button"
+                onclick="showSection('ai-chat', this)">
+                <span>▤</span>
+                AI Chat
+            </button>
+
+            <button
+                class="nav-item"
+                type="button"
+                onclick="showSection('voice-assistant', this)">
+                <span>◉</span>
+                Voice Assistant
+            </button>
+
+            <button
+                class="nav-item"
+                type="button"
+                onclick="showSection('activity', this)">
+                <span>⌁</span>
+                Activity
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="mini-orb">M</div>
+
+            <div>
+                <strong>MINDX Agent</strong>
+                <p>Voice + Text assistant</p>
+            </div>
+
+            <span class="online-dot"></span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN AREA ================= -->
+    <main class="main-area">
+
+        <!-- ================= TOPBAR ================= -->
+        <header class="topbar">
+
+            <div>
+                <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+                <h2 id="pageTitle">Welcome to MINDX</h2>
+            </div>
+
+            <div class="connection">
+
+                <span class="online-dot"></span>
+
+                <span id="status">
+                    ONLINE
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================================================= -->
+        <!-- DASHBOARD -->
+        <!-- ================================================= -->
+
+        <section
+            id="dashboard"
+            class="page-section active-section">
+
+            <section class="welcome-panel">
+
+                <div class="welcome-copy">
+
+                    <span class="gold-tag">
+                        ✦ YOUR AI ASSISTANT
+                    </span>
+
+                    <h2>
+                        Think less.<br>
+                        <span>Do more.</span>
+                    </h2>
+
+                    <p>
+                        Tell MINDX what you need.
+                        Use your voice or type a command
+                        to get started.
+                    </p>
+
+                    <button
+                        id="startBtn"
+                        class="primary-btn"
+                        type="button">
+
+                        <span>▶</span>
+                        START MINDX
+
+                    </button>
+
+                </div>
+
+
+                <div class="orb" id="orb">
+                    <span>M</span>
+                </div>
+
+                <div class="glow"></div>
+
+            </section>
+
+
+            <!-- Dashboard quick access -->
+
+            <section class="quick-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="eyebrow">
+                            GET STARTED
+                        </p>
+
+                        <h3>
+                            What can I help with?
+                        </h3>
+                    </div>
+
+                    <span class="small-note">
+                        QUICK ACCESS
+                    </span>
+
+                </div>
+
+
+                <div class="quick-grid">
+
+                    <button
+                        class="quick-card"
+                        type="button"
+                        onclick="showSection('commands')">
+
+                        <span class="quick-icon">⚡</span>
+
+                        <strong>
+                            Commands
+                        </strong>
+
+                        <small>
+                            YouTube & Windows commands
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="quick-card"
+                        type="button"
+                        onclick="showSection('ai-chat')">
+
+                        <span class="quick-icon">▤</span>
+
+                        <strong>
+                            AI Chat
+                        </strong>
+
+                        <small>
+                            Chat with MINDX AI
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="quick-card"
+                        type="button"
+                        onclick="showSection('voice-assistant')">
+
+                        <span class="quick-icon">🎙</span>
+
+                        <strong>
+                            Voice Assistant
+                        </strong>
+
+                        <small>
+                            Talk with MINDX
+                        </small>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- COMMANDS SECTION -->
+        <!-- ================================================= -->
+
+        <section
+            id="commands"
+            class="page-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        MINDX CONTROL CENTER
+                    </p>
+
+                    <h3>
+                        Commands
+                    </h3>
+
+                </div>
+
+                <span class="small-note">
+                    WINDOWS + YOUTUBE
+                </span>
+
+            </div>
+
+
+            <div class="quick-grid">
+
+                <!-- YouTube -->
+
+                <button
+                    class="quick-card"
+                    type="button"
+                    onclick="sendToMINDX('Open YouTube')">
+
+                    <span class="quick-icon">
+                        ▶
+                    </span>
+
+                    <strong>
+                        YouTube
+                    </strong>
+
+                    <small>
+                        Play, pause, next, previous,
+                        volume, seek and more
+                    </small>
+
+                </button>
+
+
+                <!-- Notepad -->
+
+                <button
+                    class="quick-card"
+                    type="button"
+                    onclick="document.getElementById('command').value='Open Notepad'; document.getElementById('command').focus()">
+
+                    <span class="quick-icon">
+                        ▤
+                    </span>
+
+                    <strong>
+                        Notepad
+                    </strong>
+
+                    <small>
+                        Open Windows Notepad
+                    </small>
+
+                </button>
+
+
+                <!-- Calculator -->
+
+                <button
+                    class="quick-card"
+                    type="button"
+                    onclick="document.getElementById('command').value='Open Calculator'; document.getElementById('command').focus()">
+
+                    <span class="quick-icon">
+                        ⊞
+                    </span>
+
+                    <strong>
+                        Calculator
+                    </strong>
+
+                    <small>
+                        Open Windows Calculator
+                    </small>
+
+                </button>
+
+
+                <!-- File Explorer -->
+
+                <button
+                    class="quick-card"
+                    type="button"
+                    onclick="document.getElementById('command').value='Open File Explorer'; document.getElementById('command').focus()">
+
+                    <span class="quick-icon">
+                        📁
+                    </span>
+
+                    <strong>
+                        File Explorer
+                    </strong>
+
+                    <small>
+                        Open Windows File Explorer
+                    </small>
+
+                </button>
+
+
+                <!-- Downloads -->
+
+                <button
+                    class="quick-card"
+                    type="button"
+                    onclick="document.getElementById('command').value='Open Downloads'; document.getElementById('command').focus()">
+
+                    <span class="quick-icon">
+                        ↓
+                    </span>
+
+                    <strong>
+                        Downloads
+                    </strong>
+
+                    <small>
+                        Open Downloads folder
+                    </small>
+
+                </button>
+
+
+                <!-- Desktop -->
+
+                <button
+                    class="quick-card"
+                    type="button"
+                    onclick="document.getElementById('command').value='Open Desktop'; document.getElementById('command').focus()">
+
+                    <span class="quick-icon">
+                        ▣
+                    </span>
+
+                    <strong>
+                        Desktop
+                    </strong>
+
+                    <small>
+                        Open Windows Desktop
+                    </small>
+
+                </button>
+
+            </div>
+
+
+            <!-- Command input -->
+
+            <div class="chat-panel command-panel">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            COMMAND CENTER
+                        </p>
+
+                        <h3>
+                            Send Command
+                        </h3>
+
+                    </div>
+
+                    <span class="chat-badge">
+                        TEXT COMMAND
+                    </span>
+
+                </div>
+
+
+                <div class="voice-input">
+
+                    <input
+                        id="command"
+                        type="text"
+                        placeholder="Type a MINDX command..."
+                        autocomplete="off">
+
+                    <button
+                        id="sendBtn"
+                        type="button">
+                        SEND ↗
+                    </button>
+
+                </div>
+
+                <p class="hint">
+                    Example: “Play”, “Pause”, “Open Notepad”,
+                    “Open Downloads”
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- AI CHAT SECTION -->
+        <!-- ================================================= -->
+
+        <section
+            id="ai-chat"
+            class="page-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        INTELLIGENT CONVERSATION
+                    </p>
+
+                    <h3>
+                        AI Chat
+                    </h3>
+
+                </div>
+
+                <span class="chat-badge">
+                    MINDX AI
+                </span>
+
+            </div>
+
+
+            <!-- ChatGPT style chat area -->
+
+            <div class="ai-chat-container">
+
+                <div
+                    id="aiChatMessages"
+                    class="ai-chat-messages">
+
+                    <!-- MINDX message -->
+
+                    <div class="ai-message mindx-message">
+
+                        <div class="message-avatar">
+                            M
+                        </div>
+
+                        <div class="message-content">
+
+                            <strong>
+                                MINDX
+                                <span>AI ASSISTANT</span>
+                            </strong>
+
+                            <p>
+                                Hello! I'm MINDX.
+                                How can I help you?
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Existing message IDs kept -->
+
+                    <div
+                        id="title"
+                        style="display:none;">
+                        Ready when you are
+                    </div>
+
+                    <div
+                        id="message"
+                        style="display:none;">
+                        Type a message to start chatting.
+                    </div>
+
+                </div>
+
+
+                <!-- AI Chat input -->
+
+                <div class="ai-chat-input">
+
+                    <textarea
+                        id="aiChatInput"
+                        rows="1"
+                        placeholder="Message MINDX..."
+                        autocomplete="off"></textarea>
+
+                    <button
+                        id="aiChatSend"
+                        type="button">
+                        SEND ↗
+                    </button>
+
+                </div>
+
+
+                <p class="hint">
+                    Ask MINDX anything or have a normal conversation.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- VOICE ASSISTANT -->
+        <!-- ================================================= -->
+
+        <section
+            id="voice-assistant"
+            class="page-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        VOICE CONTROL
+                    </p>
+
+                    <h3>
+                        Voice Assistant
+                    </h3>
+
+                </div>
+
+                <span class="small-note">
+                    VOICE
+                </span>
+
+            </div>
+
+
+            <div class="voice-assistant-panel">
+
+                <div
+                    class="voice-orb"
+                    id="voiceOrb">
+
+                    <span>
+                        🎙
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Talk to MINDX
+                </h3>
+
+                <p>
+                    Press the button and speak your command.
+                </p>
+
+
+                <button
+                    id="voiceStartButton"
+                    class="primary-btn"
+                    type="button">
+
+                    🎙 START LISTENING
+
+                </button>
+
+
+                <div class="voice-command-preview">
+
+                    <span>
+                        VOICE COMMAND
+                    </span>
+
+                    <p id="voiceCommandText">
+                        Waiting for your command...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- ACTIVITY -->
+        <!-- ================================================= -->
+
+        <section
+            id="activity"
+            class="page-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        RECENT ACTION
+                    </p>
+
+                    <h3>
+                        Activity Log
+                    </h3>
+
+                </div>
+
+                <span class="small-note">
+                    LATEST UPDATE
+                </span>
+
+            </div>
+
+
+            <div
+                id="activityLog"
+                class="activity-log">
+
+                MINDX is waiting for you.
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+            MINDX
+            <span>·</span>
+            PRIVATE AI WORKSPACE
+            <span>·</span>
+            VOICE + TEXT
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- ================= PAGE SWITCH ================= -->
+
+<script>
+
+function showSection(sectionId, clickedButton = null) {
+
+    const sections =
+        document.querySelectorAll(".page-section");
+
+    sections.forEach(section => {
+
+        section.classList.remove("active-section");
+
+    });
+
+
+    const selected =
+        document.getElementById(sectionId);
+
+    if (selected) {
+
+        selected.classList.add("active-section");
+
+    }
+
+
+    const navItems =
+        document.querySelectorAll(".nav-item");
+
+    navItems.forEach(item => {
+
+        item.classList.remove("selected");
+
+    });
+
+
+    if (clickedButton) {
+
+        clickedButton.classList.add("selected");
+
+    }
+
+
+    const pageTitles = {
+
+        "dashboard":
+            "Welcome to MINDX",
+
+        "commands":
+            "MINDX Commands",
+
+        "ai-chat":
+            "AI Chat",
+
+        "voice-assistant":
+            "Voice Assistant",
+
+        "activity":
+            "Activity Log"
+
+    };
+
+
+    const pageTitle =
+        document.getElementById("pageTitle");
+
+    if (pageTitle) {
+
+        pageTitle.textContent =
+            pageTitles[sectionId] || "MINDX";
+
+    }
+
+}
+
+</script>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
